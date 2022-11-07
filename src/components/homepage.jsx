@@ -14,7 +14,7 @@ import { faSortNumericDown } from "@fortawesome/free-solid-svg-icons";
 library.add(faSortAlphaDown);
 library.add(faSortNumericDown);
 
-const Homepage = ({ placeholder }) => {
+const Homepage = () => {
   const [filter, setFilter] = useState([]);
 
   const [order, setOrder] = useState(pokeDatos);
@@ -34,25 +34,28 @@ const Homepage = ({ placeholder }) => {
     setAlphabeticOrder(true);
   };
 
-
   const searchText = (event) => {
-    setFilter(event.target.value);
-    let arrayFiltrado = order.filter(order=>order.name.toLowerCase().includes(filter));
-    setOrder(arrayFiltrado);
-    console.log(order.filter(order=>order.name.toLowerCase().includes(filter)),"Array arrayFiltrado");
+    if (event.target.value == "") {
+      setOrder(pokeDatos);
+    } else {
+      setFilter(event.target.value);
+      let filtro = event.target.value;
+      let arrayFiltrado = pokeDatos.filter((item) =>
+        item.name.toLowerCase().includes(filtro)
+      );
+      setOrder(arrayFiltrado);
+    }
   };
 
+  // const dataSearch = order.filter((item) => {
+  //   return Object.keys(item).some((key) =>
+  //     item[key]
+  //       .toString()
+  //       .toLowerCase()
+  //       .includes(filter.toString().toLowerCase())
+  //   );
 
-
-  const dataSearch = order.filter((item) => {
-    return Object.keys(item).some((key) =>
-      item[key]
-        .toString()
-        .toLowerCase()
-        .includes(filter.toString().toLowerCase())
-    );
-    
-  });
+  // });
   return (
     <>
       <div>
@@ -75,9 +78,8 @@ const Homepage = ({ placeholder }) => {
             <div className="col-12 mb-3 md-8 text-center">
               <input
                 type="text"
-                placeholder={placeholder}
+                placeholder="Enter Pokemon Data"
                 className="from-control"
-                value={filter}
                 onChange={searchText.bind(this)}
               />
               <div className="searchIcon">
@@ -87,23 +89,23 @@ const Homepage = ({ placeholder }) => {
           </div>
 
           <Row xs={2} md={4} className="gx-3 gy-3">
-            {order.map((item) => {
+            {order.map((item, index) => {
               return (
-                <Col>
+                <Col key={index}>
                   <Card style={{ borderColor: item?.color }}>
                     <p className="pokeId" style={{ color: item?.color }}>
-                      #{item.id}
+                      #{item?.id}
                     </p>
                     <Card.Img
                       variant="top"
-                      src={item.image}
+                      src={item?.image}
                       className="cardImage"
                     />
                     <Card.Text
                       className="card-title"
                       style={{ backgroundColor: item?.color }}
                     >
-                      {item.name}
+                      {item?.name}
                     </Card.Text>
                   </Card>
                 </Col>

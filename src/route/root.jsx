@@ -11,7 +11,7 @@ function Root() {
           <img className="pokedex-logo" src="/images/logo.png" alt="Logo" />
         </div>
         <div>
-          <Homepage placeholder="Enter Pokemon Data" className="placeholder"/>
+          <Homepage/>
         </div>
       </div>
     </>

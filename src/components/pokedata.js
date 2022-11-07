@@ -2,7 +2,7 @@ const pokeDatos = [
   {
     id: "001",
     name: "Bulbasaur",
-    image: "../images/bulbasaur.png",
+    image: "images/bulbasaur.png",
     color: "#74CB48",
     main_type: "Grass",
     secondary_type: "Poison",
@@ -24,7 +24,7 @@ const pokeDatos = [
   {
     id: "004",
     name: "Charmander",
-    image: "../images/charmander.png",
+    image: "images/charmander.png",
     color: "#f57d31",
     main_type: "Fire",
     main_ability: "Mega Punch",
@@ -45,7 +45,7 @@ const pokeDatos = [
   {
     id: "007",
     name: "Squirtle",
-    image: "../images/squirtle.png",
+    image: "images/squirtle.png",
     color: "#6493eb",
     main_type: "Water",
     main_ability: "Torrent",
@@ -66,7 +66,7 @@ const pokeDatos = [
   {
     id: "012",
     name: "Butterfree",
-    image: "../images/butterfree.png",
+    image: "images/butterfree.png",
     color: "#a7b723",
     main_type: "Bug",
     secondary_type: "Flying",
@@ -88,7 +88,7 @@ const pokeDatos = [
   {
     id: "016",
     name: "Pidgey",
-    image: "../images/pidgey.png",
+    image: "images/pidgey.PNG",
     color: "#A891ec",
     main_type: "Flying",
     secondary_type: "Normal",
@@ -110,7 +110,7 @@ const pokeDatos = [
   {
     id: "025",
     name: "Pikachu",
-    image: "../images/pikachu.png",
+    image: "images/pikachu.png",
     color: "#f9cf30",
     main_type: "Electrical",
     secondary_type: "",
@@ -132,7 +132,7 @@ const pokeDatos = [
   {
     id: "035",
     name: "Clefairy",
-    image: "../images/clefairy.png",
+    image: "images/clefairy.png",
     color: "#E69EAC",
     main_type: "Fairy",
     secondary_type: "",
@@ -154,7 +154,7 @@ const pokeDatos = [
   {
     id: "066",
     name: "Machop",
-    image: "../images/machop.png",
+    image: "images/machop.png",
     color: "#c12239",
     main_type: "Fighting",
     secondary_type: "",
@@ -176,7 +176,7 @@ const pokeDatos = [
   {
     id: "092",
     name: "Gastly",
-    image: "../images/gastly.png",
+    image: "images/gastly.png",
     color: "#70559B",
     main_type: "Ghost",
     secondary_type: "Poison",
@@ -198,7 +198,7 @@ const pokeDatos = [
   {
     id: "132",
     name: "Ditto",
-    image: "../images/ditto.png",
+    image: "images/ditto.png",
     color: "#aaa67f",
     main_type: "Normal",
     secondary_type: "",
@@ -220,7 +220,7 @@ const pokeDatos = [
   {
     id: "151",
     name: "Mew",
-    image: "../images/mew.png",
+    image: "images/mew.png",
     color: "#fb5584",
     main_type: "Psychic",
     secondary_type: "",
@@ -242,7 +242,7 @@ const pokeDatos = [
   {
     id: "304",
     name: "Aron",
-    image: "../images/aron.png",
+    image: "images/aron.png",
     color: "#b789d0",
     main_type: "Steel",
     secondary_type: "Rock",
