@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import pokeDatos from "./pokedata";
-import "../index.css";
-import "../App.css";
+import pokeDatos from "./Pokedata";
+import "./Homepage.css";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
@@ -10,6 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faSortAlphaDown } from "@fortawesome/free-solid-svg-icons";
 import { faSortNumericDown } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 library.add(faSortAlphaDown);
 library.add(faSortNumericDown);
@@ -47,68 +47,74 @@ const Homepage = () => {
     }
   };
 
-  // const dataSearch = order.filter((item) => {
-  //   return Object.keys(item).some((key) =>
-  //     item[key]
-  //       .toString()
-  //       .toLowerCase()
-  //       .includes(filter.toString().toLowerCase())
-  //   );
-
-  // });
   return (
     <>
-      <div>
-        {alphabeticOrder ? (
-          <FontAwesomeIcon
-            icon="fas fa-sort-numeric-down"
-            onClick={() => orderByNumber()}
-          />
-        ) : (
-          <FontAwesomeIcon
-            icon="fas fa-sort-alpha-down"
-            onClick={() => orderByName()}
-          />
-        )}
+      <div className="header">
+        <img className="pokedex-logo" src="/images/logo.png" alt="Logo" />
       </div>
-
       <section className="py-4 container">
         <div className="row md-3 justify-content-center content-center">
-          <div className="col-12 mb-3 searchbar ">
-            <div className="col-12 mb-3 md-8 text-center">
+          <div className="col-12 searchbar ">
+            <div className="col-12 md-8 text-center">
               <input
                 type="text"
-                placeholder="Enter Pokemon Data"
+                placeholder="Enter Pokemon Name..."
                 className="from-control"
                 onChange={searchText.bind(this)}
               />
               <div className="searchIcon">
                 <SearchIcon />
               </div>
+              <div className="sortButton mx-4 pt-2">
+                {alphabeticOrder ? (
+                  <FontAwesomeIcon
+                    icon="fas fa-sort-numeric-down"
+                    onClick={() => orderByNumber()}
+                  />
+                ) : (
+                  <FontAwesomeIcon
+                    icon="fas fa-sort-alpha-down"
+                    onClick={() => orderByName()}
+                  />
+                )}
+              </div>
             </div>
           </div>
 
-          <Row xs={2} md={4} className="gx-3 gy-3">
+          <Row xs={2} md={4} className="gx-4 gy-4">
             {order.map((item, index) => {
               return (
-                <Col key={index}>
-                  <Card style={{ borderColor: item?.color }}>
-                    <p className="pokeId" style={{ color: item?.color }}>
-                      #{item?.id}
-                    </p>
-                    <Card.Img
-                      variant="top"
-                      src={item?.image}
-                      className="cardImage"
-                    />
-                    <Card.Text
-                      className="card-title"
-                      style={{ backgroundColor: item?.color }}
+                <Link className="classLink" to={`/detallePokemon/${item.name}`}> 
+                  <Col key={index}> 
+                    <Card
+                      className="borderCard"
+                      style={{
+                        borderColor: item?.color,
+                        borderWidth: "5.5px",
+                        boxShadow: "0 0 10px grey",
+                        backdropFilter: "blur(8px)",
+                        backgroundColor: "transparent",
+                      }}
                     >
-                      {item?.name}
-                    </Card.Text>
-                  </Card>
-                </Col>
+                      <p className="pokeId" style={{ color: item?.color }}>
+                        #{item?.id}
+                      </p>
+                      <Card.Img
+                        variant="top"
+                        src={item?.image}
+                        className="cardPhoto"
+                      />
+                      <Card.Text
+                        className="card-title"
+                        style={{ backgroundColor: item?.color }}
+                      >
+                        {item?.name}
+                      </Card.Text>
+                     
+                    </Card>
+                   
+                  </Col>
+                  </Link>
               );
             })}
           </Row>
