@@ -54,7 +54,7 @@ function Pokecard() {
                 className="flechaIzq"
                 src="/images/flecha-izquierda.png"
                 onClick={() => {
-                  navigate("/homepage/");
+                  navigate("../");
                 }}
               ></img>
               <h2 className="nombre">{props.name}</h2>
