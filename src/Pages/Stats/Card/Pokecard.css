@@ -242,6 +242,11 @@
   margin-bottom: 20px;
 }
 
+.description{
+  width:500px;
+  height:50px;
+}
+
 .stats {
   text-align: center;
   font-weight: bolder;

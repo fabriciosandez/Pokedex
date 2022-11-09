@@ -1,4 +1,5 @@
 import { useRouteError } from "react-router-dom";
+import "./Error-page.css";
 
 function ErrorPage() {
   const error = useRouteError();
@@ -6,11 +7,9 @@ function ErrorPage() {
 
   return (
     <div id="error-page">
-      <h1>Oops!</h1>
-      <p>Sorry, an unexpected error has occurred.</p>
-      <p>
-        <i>{error.statusText || error.message}</i>
-      </p>
+      <h1 className="errorTitle">Error</h1>
+      <img src="./images/abra.png"/>
+      <p className="errorMessage">¿Se te ha perdido un Pokemon? </p>
     </div>
   );
 }
