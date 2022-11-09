@@ -6,6 +6,7 @@ import Root from "./Routes/Root";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 import Pokecard from "./Pages/Stats/Card/Pokecard";
+import Homepage from "./Pages/Home/Homepage";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   { path: "detallePokemon/:name", element: <Pokecard /> },
+  { path: "homepage", element: <Homepage /> },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

@@ -7,6 +7,7 @@ function Pokecard() {
   const { name } = useParams();
   const navigate = useNavigate();
 
+
   const props = pokeDatos.find((pokemon) => {
     return pokemon.name == name;
   });
@@ -19,13 +20,12 @@ function Pokecard() {
     if (indexActual == 0) {
       let indexLeft = pokeDatos.length - 1;
       const pokeLeft = pokeDatos[indexLeft];
-      navigate("/detallePokemon/:"+pokeLeft.name);
+      navigate("/detallePokemon/"+pokeLeft.name);
     } else {
       let indexLeft = indexActual - 1;
       const pokeLeft = pokeDatos[indexLeft];
-      navigate("/detallePokemon/:"+pokeLeft.name);
+      navigate("/detallePokemon/"+pokeLeft.name);
     }
-    console.log(moveLeft);
   }
 
   function moveRight() {
@@ -54,7 +54,7 @@ function Pokecard() {
                 className="flechaIzq"
                 src="/images/flecha-izquierda.png"
                 onClick={() => {
-                  navigate(-1);
+                  navigate("/homepage/");
                 }}
               ></img>
               <h2 className="nombre">{props.name}</h2>
