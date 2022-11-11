@@ -84,8 +84,8 @@ const Homepage = () => {
           <Row xs={2} md={4} className="gx-4 gy-4">
             {order.map((item, index) => {
               return (
-                <Link className="classLink" to={`/detallePokemon/${item.name}`}> 
-                  <Col key={index}> 
+                <Link className="classLink" to={`/detallePokemon/${item.name}`}>
+                  <Col key={index}>
                     <Card
                       className="borderCard"
                       style={{
@@ -110,11 +110,9 @@ const Homepage = () => {
                       >
                         {item?.name}
                       </Card.Text>
-                     
                     </Card>
-                   
                   </Col>
-                  </Link>
+                </Link>
               );
             })}
           </Row>
